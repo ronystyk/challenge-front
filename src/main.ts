@@ -11,7 +11,7 @@ app.use(router)
 app.mount('#app')
 
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   const baseTitle = 'Challenge Vue + Go'
   document.title = to.meta.title
     ? `${to.meta.title} - ${baseTitle}`

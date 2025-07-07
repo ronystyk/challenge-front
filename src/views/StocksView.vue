@@ -42,7 +42,7 @@
 <script setup lang="ts">
     import AppLayout from '../layouts/AppLayout.vue'
     import Pagination from '../components/Pagination.vue'
-    import { computed, onMounted, ref, watch } from 'vue'
+    import { computed, onMounted, ref } from 'vue'
     import { useStockStore } from '../stores/stockStore'
     
     const store = useStockStore();
