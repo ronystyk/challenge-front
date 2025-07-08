@@ -1,11 +1,11 @@
 <template>
     <AppLayout>
         <div v-if="store.loading" class="text-center text-gray-500">Cargando...</div>
-        <div v-else-if="store.error" class="text-red-500 text-center">{{ store.error }}</div>
+        <div v-if="store.error" class="text-red-500 text-center">{{ store.error }}</div>
         <div v-else class="p-6">
             <div class="mb-4 flex justify-between items-center">
                 <h1 class="text-2xl font-bold mb-4">📈 Stock list</h1>
-                <input v-model="search" @input="onSearch" type="text" placeholder="Search by ticker or company..."
+                <input v-model="search" @keyup="onSearch" type="text" placeholder="Search by ticker or company..."
                     class="w-full sm:w-1/2 md:w-md px-4 py-2 border rounded" />
             </div>
             <table class="table-auto w-full border">
@@ -55,4 +55,5 @@
         store.setFilter(search.value)
     }
     const stocks = computed(() => store.stocks);
+
 </script>

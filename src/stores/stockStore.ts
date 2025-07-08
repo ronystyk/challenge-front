@@ -14,7 +14,7 @@ export const useStockStore = defineStore('stock', {
     }),
     actions: {
         async loadStocks() {
-            this.loading = true
+            // this.loading = true
             this.error = null;
             try {
                 const data = await fetchStocks(this.page, this.pageSize, this.filter)
@@ -24,7 +24,7 @@ export const useStockStore = defineStore('stock', {
                 this.error = 'Unable to fetch stocks. Please try again later.'
                 console.error(err); 
             } finally {
-                this.loading = false
+                // this.loading = false
             }
         },
         setPage(newPage: number) {
